@@ -1,0 +1,233 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 2,
+    "failures": 0,
+    "start": "2025-01-29T09:41:24.902Z",
+    "end": "2025-01-29T09:41:30.202Z",
+    "duration": 5300,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 66.66666666666666,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "65e79ad3-4553-4e69-90cf-78a14b4abae9",
+      "title": "",
+      "fullFile": "/home/meelisn/bigbank/loan_calc_modal_test.ts",
+      "file": "/loan_calc_modal_test.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+          "title": "loan calculation modal",
+          "fullFile": "/home/meelisn/bigbank/loan_calc_modal_test.ts",
+          "file": "/loan_calc_modal_test.ts",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: codeceptjs.beforeSuite in \"loan calculation modal\"",
+              "fullTitle": "loan calculation modal \"before all\" hook: codeceptjs.beforeSuite in \"loan calculation modal\"",
+              "timedOut": false,
+              "duration": 1084,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteSetup(suite)",
+              "err": {},
+              "uuid": "88be72d6-5524-428b-896b-8bba599bd2ad",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: codeceptjs.before in \"loan calculation modal\"",
+              "fullTitle": "loan calculation modal \"before each\" hook: codeceptjs.before in \"loan calculation modal\"",
+              "timedOut": false,
+              "duration": 717,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.setup(suite)",
+              "err": {},
+              "uuid": "b2d0e734-83e6-47fa-ac82-1cc549a177be",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook: Before in \"loan calculation modal\"",
+              "fullTitle": "loan calculation modal \"before each\" hook: Before in \"loan calculation modal\"",
+              "timedOut": false,
+              "duration": 2527,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "I }) => {\n    I.amOnPage('/?amount=5000&period=60&productName=SMALL_LOAN&loanPurpose=DAILY_SETTLEMENTS');\n    //make sure modal is loaded in\n    I.waitForElement(modal.amountField, 5);",
+              "err": {},
+              "uuid": "aabe8a40-b8ce-4cb7-8519-84fb79170c5f",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook: codeceptjs.afterSuite in \"loan calculation modal\"",
+              "fullTitle": "loan calculation modal \"after all\" hook: codeceptjs.afterSuite in \"loan calculation modal\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.suiteTeardown(suite)",
+              "err": {},
+              "uuid": "938a4bda-aaf3-4ee6-b872-d2ba34366630",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook: finalize codeceptjs in \"loan calculation modal\"",
+              "fullTitle": "loan calculation modal \"after each\" hook: finalize codeceptjs in \"loan calculation modal\"",
+              "timedOut": false,
+              "duration": 12,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "scenario.teardown(suite)",
+              "err": {},
+              "uuid": "56a48540-6f4b-4b33-90a1-f4d77395068f",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Different input amount value changes monthly payment",
+              "fullTitle": "loan calculation modal: Different input amount value changes monthly payment",
+              "timedOut": false,
+              "duration": 953,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "I }) => {\n    //get the monthly payment value before amount change\n    let beforeMonthly = await I.grabTextFrom(modal.monthlyPaymentValue);\n    I.fillField(modal.amountField, \"20000\");\n    I.blur(modal.amountField);\n    //value should be something different\n    I.dontSee(beforeMonthly, modal.monthlyPaymentValue);",
+              "err": {},
+              "uuid": "d1fcfee2-63ff-48df-8d97-9996735a93e3",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Different input loan period value changes monthly payment",
+              "fullTitle": "loan calculation modal: Different input loan period value changes monthly payment",
+              "timedOut": false,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "1d71f38c-5a22-429d-b526-55b23eceba67",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Underlying form uses new loan sum",
+              "fullTitle": "loan calculation modal: Underlying form uses new loan sum",
+              "timedOut": false,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "874e2db8-e1fe-4a97-ba51-3b7e38e4b3df",
+              "parentUUID": "e360a03b-31fb-4b27-aa6f-2c47530f2e3d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d1fcfee2-63ff-48df-8d97-9996735a93e3"
+          ],
+          "failures": [],
+          "pending": [
+            "1d71f38c-5a22-429d-b526-55b23eceba67",
+            "874e2db8-e1fe-4a97-ba51-3b7e38e4b3df"
+          ],
+          "skipped": [],
+          "duration": 953,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 0
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "./output"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
