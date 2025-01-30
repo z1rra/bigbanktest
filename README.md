@@ -3,9 +3,12 @@ Framework used: https://codecept.io/
 
 Requirements for the environment:
 
-npm version  9.2.0
+I ran using npm version 9.2.0.
+
 Playwright could need an update. Run `sudo npx playwright install-deps` if prompted.
+
 If you don't have mocha, run `npm i mochawesome`
+
 firefox browser installed
 
 ---
